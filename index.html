@@ -63,19 +63,45 @@
   h1, h2, h3 { font-family: "Fraunces", Georgia, serif; text-wrap: balance; margin: 0; }
 
   header.hero {
-    padding: 56px 0 40px;
+    position: relative;
+    padding: 64px 0 40px;
     border-bottom: 1px solid var(--border);
+    overflow: hidden;
+  }
+  .hero-figure {
+    position: absolute; top: -60px; right: -40px; width: 320px; height: 320px;
+    z-index: 0; pointer-events: none;
+  }
+  .hero-figure .blob {
+    position: absolute; border-radius: 50%;
+  }
+  .hero-figure .blob.b1 { width: 280px; height: 280px; top: 0; right: 0; background: var(--comm-soft); opacity: 0.8; }
+  .hero-figure .blob.b2 { width: 170px; height: 170px; top: 160px; right: 160px; background: var(--team-soft); opacity: 0.85; }
+  .hero-figure .blob.b3 { width: 90px; height: 90px; top: 20px; right: 230px; background: var(--biz-soft); opacity: 0.9; }
+  .hero-top { position: relative; z-index: 1; display: flex; align-items: center; gap: 24px; margin-bottom: 20px; }
+  .avatar {
+    width: 108px; height: 108px; border-radius: 50%; object-fit: cover; flex-shrink: 0;
+    border: 3px solid var(--bg); box-shadow: 0 0 0 1px var(--border), 0 8px 24px rgba(0,0,0,0.12);
   }
   .eyebrow {
     font-size: 12.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--ink-soft); margin-bottom: 14px;
+    color: var(--ink-soft); margin-bottom: 10px;
   }
-  h1 { font-size: clamp(32px, 5vw, 46px); font-weight: 600; margin-bottom: 14px; }
-  .hero-sub { font-size: 17px; color: var(--ink-soft); max-width: 60ch; margin-bottom: 22px; }
-  .meta-row { display: flex; flex-wrap: wrap; gap: 10px 22px; font-size: 14px; color: var(--ink-soft); }
+  h1 { font-size: clamp(30px, 4.6vw, 42px); font-weight: 600; }
+  .hero-sub { position: relative; z-index: 1; font-size: 17px; color: var(--ink-soft); max-width: 60ch; margin-bottom: 22px; }
+  .meta-row { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 10px 22px; font-size: 14px; color: var(--ink-soft); }
   .meta-row b { color: var(--ink); font-weight: 600; }
+  @media (max-width: 520px) {
+    .hero-figure { display: none; }
+    .hero-top { flex-direction: column; align-items: flex-start; gap: 14px; }
+  }
 
-  section.skill { padding: 48px 0; border-bottom: 1px solid var(--border); }
+  section.skill { position: relative; padding: 48px 0; border-bottom: 1px solid var(--border); overflow: hidden; }
+  .skill-bg { position: absolute; top: -40px; right: -60px; width: 220px; height: 220px; border-radius: 50%; z-index: 0; opacity: 0.5; pointer-events: none; }
+  .skill[data-skill="comm"] .skill-bg { background: var(--comm-soft); }
+  .skill[data-skill="team"] .skill-bg { background: var(--team-soft); }
+  .skill[data-skill="biz"] .skill-bg { background: var(--biz-soft); }
+  .skill > * { position: relative; z-index: 1; }
   .skill-head { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
   .skill-tag {
     font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
@@ -147,8 +173,18 @@
 <body>
 <div class="wrap">
   <header class="hero">
-    <div class="eyebrow">Employability Skills Portfolio</div>
-    <h1>Tabiba Mhajabin Eva</h1>
+    <div class="hero-figure" aria-hidden="true">
+      <div class="blob b1"></div>
+      <div class="blob b2"></div>
+      <div class="blob b3"></div>
+    </div>
+    <div class="hero-top">
+      <img class="avatar" src="assets/profile.jpg" alt="Tabiba Mhajabin Eva">
+      <div>
+        <div class="eyebrow">Employability Skills Portfolio</div>
+        <h1>Tabiba Mhajabin Eva</h1>
+      </div>
+    </div>
     <p class="hero-sub">Evidence of three employability skills developed while building RANG Beauty, my group's venture for Entrepreneurism, alongside my Work-Based Learning project and retail experience.</p>
     <div class="meta-row">
       <span><b>Programme</b> &nbsp;BSc (Hons) Business Management</span>
@@ -158,6 +194,7 @@
   </header>
 
   <section class="skill" data-skill="comm">
+    <div class="skill-bg" aria-hidden="true"></div>
     <div class="skill-head">
       <span class="skill-tag">Communication &amp; Presentation</span>
     </div>
@@ -169,6 +206,7 @@
   </section>
 
   <section class="skill" data-skill="team">
+    <div class="skill-bg" aria-hidden="true"></div>
     <div class="skill-head">
       <span class="skill-tag">Teamwork &amp; Collaboration</span>
     </div>
@@ -176,10 +214,11 @@
     <p class="skill-why">Working inside a five-person venture team meant my own section of the plan had to connect to everyone else's, and hold up under challenge from teammates who saw gaps I hadn't.</p>
     <div class="evidence-grid" id="grid-team"></div>
     <button class="add-evidence" data-skill="team">+ Add evidence</button>
-    <p class="skill-note">Built through revising the RANG Beauty marketing plan after teammate feedback, and collaborating within a five-person Work-Based Learning group on a shared destination-marketing strategy.</p>
+    <p class="skill-note">Built through revising the RANG Beauty marketing plan after teammate feedback, serving as Secretary for the Ravensbourne University Bangladeshi Community, and collaborating within a five-person Work-Based Learning group on a shared destination-marketing strategy.</p>
   </section>
 
   <section class="skill" data-skill="biz">
+    <div class="skill-bg" aria-hidden="true"></div>
     <div class="skill-head">
       <span class="skill-tag">Commercial &amp; Business Awareness</span>
     </div>
@@ -213,9 +252,12 @@
   var STATE = {
     evidence: {
       comm: [
-        { id: "seed-comm-1", url: "assets/linkedin-certificate.jpeg", contentType: "image", caption: "LinkedIn Learning: ‘How to Be a Better Professional Speaker in the Workplace’", date: "Completed 29 March 2026" }
+        { id: "seed-comm-1", url: "assets/linkedin-certificate.jpeg", contentType: "image", caption: "LinkedIn Learning: ‘How to Be a Better Professional Speaker in the Workplace’", date: "Completed 29 March 2026" },
+        { id: "seed-comm-2", url: "assets/event-photo.jpg", contentType: "image", caption: "Industry talk on creativity, branding and building a career — Ravensbourne Rave LATE", date: "Attended, posted to LinkedIn" }
       ],
-      team: [],
+      team: [
+        { id: "seed-team-1", url: "", contentType: "image", caption: "Secretary, Ravensbourne University Bangladeshi Community (apprenticeship)", date: "January 2026 – present" }
+      ],
       biz: []
     },
     reflection: "Across the Entrepreneurism module I developed three skills I can now evidence rather than just claim: communication and presentation, teamwork and collaboration, and commercial and business awareness.\n\nAs Marketing and Customer Engagement Lead for RANG Beauty, I had to turn a specific, evidenced customer problem into a pitch an outside audience could follow in minutes, and then defend the whole venture in Q&A, not only my own section. Preparing for questions I hadn't written the answers to in advance was uncomfortable at first, but it pushed my presentation skill from ‘clear to people who already understand the idea’ to ‘clear to people meeting it for the first time’, which is a harder and more useful standard.\n\nTeamwork showed up less as task-splitting and more as being willing to change my own work when challenged. When a teammate questioned whether a digital-only marketing plan would reach customers who preferred in-person, multilingual service, I revised the plan rather than defending it, which produced a stronger, more realistic go-to-market strategy than either of us would have reached alone. A separate Work-Based Learning project, where I collaborated with four other students on a shared destination-marketing strategy, reinforced the same lesson in a different setting: a good contribution has to connect to everyone else's work, not just stand on its own.\n\nCommercial awareness is the skill I came into the module already building through retail work at KIKO Milano and Inglot Cosmetics, and through mapping the beauty industry's value chain in an earlier module. Entrepreneurism gave me a vocabulary and set of frameworks to use that experience properly: opportunity identification, value proposition, MVP validation and pricing logic, applied to a real, specific gap I had personally observed at the counter rather than a general claim about the market.\n\nGoing into my final year, I want to keep developing commercial awareness specifically through more structured market and financial analysis, since that is where I still rely most on instinct rather than evidence, and I now have a clearer sense of what that evidence should actually look like."
