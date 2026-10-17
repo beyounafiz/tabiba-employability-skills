@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Employability Skills — Tabiba Mhajabin Eva</title>
+<meta name="description" content="Tabiba Mhajabin Eva's employability skills portfolio for BSM24204 Entrepreneurism — communication, teamwork and commercial awareness, with evidence from the RANG Beauty venture and Work-Based Learning.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAFAF9;
+    --surface: #F2F4F4;
+    --surface-2: #EAEDED;
+    --ink: #1C2B33;
+    --ink-soft: #52636B;
+    --border: #DEE3E3;
+    --comm: #C1542C;
+    --comm-soft: #F7E7DF;
+    --team: #1F6F64;
+    --team-soft: #DFEEEA;
+    --biz: #2B4570;
+    --biz-soft: #E2E8F0;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #15191B;
+      --surface: #1D2325;
+      --surface-2: #242B2D;
+      --ink: #EDEFEF;
+      --ink-soft: #AFBDC2;
+      --border: #313A3C;
+      --comm-soft: #3A2A22;
+      --team-soft: #203330;
+      --biz-soft: #232B3A;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #15191B;
+    --surface: #1D2325;
+    --surface-2: #242B2D;
+    --ink: #EDEFEF;
+    --ink-soft: #AFBDC2;
+    --border: #313A3C;
+    --comm-soft: #3A2A22;
+    --team-soft: #203330;
+    --biz-soft: #232B3A;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Work Sans", system-ui, sans-serif;
+    padding: 0 20px;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; }
+  h1, h2, h3 { font-family: "Fraunces", Georgia, serif; text-wrap: balance; margin: 0; }
+
+  header.hero {
+    padding: 56px 0 40px;
+    border-bottom: 1px solid var(--border);
+  }
+  .eyebrow {
+    font-size: 12.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--ink-soft); margin-bottom: 14px;
+  }
+  h1 { font-size: clamp(32px, 5vw, 46px); font-weight: 600; margin-bottom: 14px; }
+  .hero-sub { font-size: 17px; color: var(--ink-soft); max-width: 60ch; margin-bottom: 22px; }
+  .meta-row { display: flex; flex-wrap: wrap; gap: 10px 22px; font-size: 14px; color: var(--ink-soft); }
+  .meta-row b { color: var(--ink); font-weight: 600; }
+
+  section.skill { padding: 48px 0; border-bottom: 1px solid var(--border); }
+  .skill-head { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+  .skill-tag {
+    font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 7px 14px; border-radius: 100px;
+  }
+  .skill[data-skill="comm"] .skill-tag { background: var(--comm-soft); color: var(--comm); }
+  .skill[data-skill="team"] .skill-tag { background: var(--team-soft); color: var(--team); }
+  .skill[data-skill="biz"] .skill-tag { background: var(--biz-soft); color: var(--biz); }
+  .skill h2 { font-size: clamp(24px, 3.4vw, 30px); font-weight: 500; }
+
+  .skill-why { font-size: 16px; color: var(--ink-soft); max-width: 68ch; margin-bottom: 26px; }
+
+  .evidence-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px; margin-bottom: 18px;
+  }
+  .ev-card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    overflow: hidden; display: flex; flex-direction: column;
+  }
+  .ev-media { width: 100%; aspect-ratio: 4/3; background: var(--surface-2); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .ev-media img, .ev-media video { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .ev-placeholder { color: var(--ink-soft); font-size: 13px; text-align: center; padding: 16px; }
+  .ev-body { padding: 12px 14px 14px; }
+  .ev-caption { font-size: 13.5px; font-weight: 500; }
+  .ev-date { font-size: 12px; color: var(--ink-soft); margin-top: 2px; }
+
+  .add-evidence {
+    display: flex; align-items: center; gap: 10px; justify-content: center;
+    background: transparent; border: 1.5px dashed var(--border); border-radius: 12px;
+    aspect-ratio: 4/3; cursor: pointer; color: var(--ink-soft); font-size: 13.5px; font-weight: 500;
+    font-family: "Work Sans", sans-serif;
+  }
+  .skill[data-skill="comm"] .add-evidence:hover { border-color: var(--comm); color: var(--comm); }
+  .skill[data-skill="team"] .add-evidence:hover { border-color: var(--team); color: var(--team); }
+  .skill[data-skill="biz"] .add-evidence:hover { border-color: var(--biz); color: var(--biz); }
+
+  .skill-note { font-size: 14.5px; color: var(--ink-soft); border-left: 2px solid var(--border); padding-left: 14px; }
+
+  section.reflection { padding: 48px 0; }
+  .reflection h2 { font-size: 26px; font-weight: 500; margin-bottom: 6px; }
+  .reflection .word-count { font-size: 13px; color: var(--ink-soft); margin-bottom: 20px; }
+  .reflection-text { font-size: 16px; white-space: pre-wrap; max-width: 72ch; }
+  textarea.reflection-edit {
+    width: 100%; min-height: 260px; font-family: "Work Sans", sans-serif; font-size: 15.5px;
+    color: var(--ink); background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+    padding: 14px; line-height: 1.55; resize: vertical;
+  }
+  .edit-row { display: flex; gap: 10px; margin-top: 12px; }
+  button.btn {
+    font-family: "Work Sans", sans-serif; font-size: 13.5px; font-weight: 600;
+    padding: 9px 16px; border-radius: 8px; border: 1px solid var(--border);
+    background: var(--surface); color: var(--ink); cursor: pointer;
+  }
+  button.btn.primary { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  button.btn:hover { opacity: 0.85; }
+
+  footer { padding: 40px 0 56px; color: var(--ink-soft); font-size: 13px; }
+  footer a { color: var(--ink-soft); }
+  .toast {
+    position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(20px);
+    background: var(--ink); color: var(--bg); padding: 10px 18px; border-radius: 8px;
+    font-size: 13.5px; opacity: 0; transition: opacity 0.25s ease, transform 0.25s ease; pointer-events: none;
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+  input[type="file"] { display: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div class="eyebrow">Employability Skills Portfolio</div>
+    <h1>Tabiba Mhajabin Eva</h1>
+    <p class="hero-sub">Evidence of three employability skills developed while building RANG Beauty, my group's venture for Entrepreneurism, alongside my Work-Based Learning project and retail experience.</p>
+    <div class="meta-row">
+      <span><b>Programme</b> &nbsp;BSc (Hons) Business Management</span>
+      <span><b>Module</b> &nbsp;BSM24204 Entrepreneurism</span>
+      <span><b>Task</b> &nbsp;Employability Skills Webpage</span>
+    </div>
+  </header>
+
+  <section class="skill" data-skill="comm">
+    <div class="skill-head">
+      <span class="skill-tag">Communication &amp; Presentation</span>
+    </div>
+    <h2>Making a technical argument land with a non-expert audience</h2>
+    <p class="skill-why">The Entrepreneurism pitch and my Work-Based Learning project both demanded the same thing: turning detailed commercial reasoning into something an audience could follow and believe in a few minutes, not a few pages.</p>
+    <div class="evidence-grid" id="grid-comm"></div>
+    <button class="add-evidence" data-skill="comm">+ Add evidence</button>
+    <p class="skill-note">Built through leading the positioning and go-to-market sections of the RANG Beauty pitch, preparing for live Q&amp;A on the whole venture, and completing a LinkedIn Learning course on professional speaking.</p>
+  </section>
+
+  <section class="skill" data-skill="team">
+    <div class="skill-head">
+      <span class="skill-tag">Teamwork &amp; Collaboration</span>
+    </div>
+    <h2>Changing my own work when the group's feedback was right</h2>
+    <p class="skill-why">Working inside a five-person venture team meant my own section of the plan had to connect to everyone else's, and hold up under challenge from teammates who saw gaps I hadn't.</p>
+    <div class="evidence-grid" id="grid-team"></div>
+    <button class="add-evidence" data-skill="team">+ Add evidence</button>
+    <p class="skill-note">Built through revising the RANG Beauty marketing plan after teammate feedback, and collaborating within a five-person Work-Based Learning group on a shared destination-marketing strategy.</p>
+  </section>
+
+  <section class="skill" data-skill="biz">
+    <div class="skill-head">
+      <span class="skill-tag">Commercial &amp; Business Awareness</span>
+    </div>
+    <h2>Reading a market from the shop floor, not just a textbook</h2>
+    <p class="skill-why">Two years in retail gave me a direct view of where customer need and commercial decision-making actually meet — experience I learned to treat as evidence, not just a part-time job.</p>
+    <div class="evidence-grid" id="grid-biz"></div>
+    <button class="add-evidence" data-skill="biz">+ Add evidence</button>
+    <p class="skill-note">Built through retail roles at KIKO Milano and Inglot Cosmetics, industry and competitor mapping during PLP22203, and shaping the target segment and pricing logic for RANG Beauty.</p>
+  </section>
+
+  <section class="reflection">
+    <h2>Reflection on Attainment</h2>
+    <div class="word-count" id="wordCount"></div>
+    <div class="reflection-text" id="reflectionText"></div>
+    <div class="edit-row" id="editRow">
+      <button class="btn" id="editBtn">Edit reflection</button>
+    </div>
+  </section>
+
+  <footer>
+    Submitted for BSM24204 Entrepreneurism, Task 3 — Employability Skills Webpage. Link to this page is included in the Task 3 Word document submitted on Canvas.
+  </footer>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+(function () {
+  "use strict";
+
+  var STATE = {
+    evidence: {
+      comm: [
+        { id: "seed-comm-1", url: "assets/linkedin-certificate.jpeg", contentType: "image", caption: "LinkedIn Learning: ‘How to Be a Better Professional Speaker in the Workplace’", date: "Completed 29 March 2026" }
+      ],
+      team: [],
+      biz: []
+    },
+    reflection: "Across the Entrepreneurism module I developed three skills I can now evidence rather than just claim: communication and presentation, teamwork and collaboration, and commercial and business awareness.\n\nAs Marketing and Customer Engagement Lead for RANG Beauty, I had to turn a specific, evidenced customer problem into a pitch an outside audience could follow in minutes, and then defend the whole venture in Q&A, not only my own section. Preparing for questions I hadn't written the answers to in advance was uncomfortable at first, but it pushed my presentation skill from ‘clear to people who already understand the idea’ to ‘clear to people meeting it for the first time’, which is a harder and more useful standard.\n\nTeamwork showed up less as task-splitting and more as being willing to change my own work when challenged. When a teammate questioned whether a digital-only marketing plan would reach customers who preferred in-person, multilingual service, I revised the plan rather than defending it, which produced a stronger, more realistic go-to-market strategy than either of us would have reached alone. A separate Work-Based Learning project, where I collaborated with four other students on a shared destination-marketing strategy, reinforced the same lesson in a different setting: a good contribution has to connect to everyone else's work, not just stand on its own.\n\nCommercial awareness is the skill I came into the module already building through retail work at KIKO Milano and Inglot Cosmetics, and through mapping the beauty industry's value chain in an earlier module. Entrepreneurism gave me a vocabulary and set of frameworks to use that experience properly: opportunity identification, value proposition, MVP validation and pricing logic, applied to a real, specific gap I had personally observed at the counter rather than a general claim about the market.\n\nGoing into my final year, I want to keep developing commercial awareness specifically through more structured market and financial analysis, since that is where I still rely most on instinct rather than evidence, and I now have a clearer sense of what that evidence should actually look like."
+  };
+
+  var SKILL_ICON = {
+    comm: "🗣️",
+    team: "🤝",
+    biz: "📊"
+  };
+
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
+  function renderGrid(skillKey) {
+    var grid = document.getElementById("grid-" + skillKey);
+    if (!grid) return;
+    grid.innerHTML = "";
+    STATE.evidence[skillKey].forEach(function (item) {
+      var card = document.createElement("div");
+      card.className = "ev-card";
+      var mediaHtml;
+      if (item.url) {
+        if (item.contentType === "video") {
+          mediaHtml = '<video src="' + escapeHtml(item.url) + '" controls></video>';
+        } else {
+          mediaHtml = '<img src="' + escapeHtml(item.url) + '" alt="' + escapeHtml(item.caption) + '">';
+        }
+      } else {
+        mediaHtml = '<div class="ev-placeholder">' + SKILL_ICON[skillKey] + '<br>Evidence noted — file to follow</div>';
+      }
+      card.innerHTML =
+        '<div class="ev-media">' + mediaHtml + "</div>" +
+        '<div class="ev-body"><div class="ev-caption">' + escapeHtml(item.caption) + '</div>' +
+        '<div class="ev-date">' + escapeHtml(item.date || "") + "</div></div>";
+      grid.appendChild(card);
+    });
+  }
+
+  function renderReflection() {
+    document.getElementById("reflectionText").textContent = STATE.reflection;
+    var words = STATE.reflection.trim().split(/\s+/).filter(Boolean).length;
+    document.getElementById("wordCount").textContent = words + " words (target: 350)";
+  }
+
+  function renderAll() {
+    ["comm", "team", "biz"].forEach(renderGrid);
+    renderReflection();
+  }
+
+  function showToast(msg) {
+    var t = document.getElementById("toast");
+    t.textContent = msg;
+    t.classList.add("show");
+    setTimeout(function () { t.classList.remove("show"); }, 2200);
+  }
+
+  function serializePage() {
+    // Regenerate the full document from STATE, keeping the head/styles as published.
+    var doc = document.documentElement.outerHTML;
+    var stateJson = JSON.stringify(STATE).replace(/</g, "\\u003c");
+    var newDoc = doc.replace(
+      /var STATE = [\s\S]*?;\n\n  var SKILL_ICON/,
+      "var STATE = " + stateJson + ";\n\n  var SKILL_ICON"
+    );
+    return "<!doctype html>\n" + newDoc;
+  }
+
+  function saveLocal() {
+    try {
+      localStorage.setItem("skillsPageState", JSON.stringify(STATE));
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function loadLocal() {
+    try {
+      var raw = localStorage.getItem("skillsPageState");
+      if (!raw) return;
+      var saved = JSON.parse(raw);
+      if (saved && saved.evidence && typeof saved.reflection === "string") STATE = saved;
+    } catch (e) { /* ignore corrupt/blocked storage */ }
+  }
+
+  async function persist(successMsg) {
+    if (window.claude && window.claude.use) {
+      try {
+        var artifact = await window.claude.use("artifact");
+        if (artifact) {
+          await artifact.publish(serializePage());
+          showToast(successMsg);
+          return;
+        }
+      } catch (e) {
+        if (e && e.code === "not_granted") { showToast("Read-only view — can't save here."); return; }
+      }
+    }
+    // Static hosting (e.g. GitHub Pages): persist to this browser only.
+    if (saveLocal()) showToast(successMsg + " (saved in this browser)");
+    else showToast("Could not save — try again.");
+  }
+
+  // ---- evidence upload ----
+  var fileInput = document.createElement("input");
+  fileInput.type = "file";
+  fileInput.accept = "image/*,video/*";
+  document.body.appendChild(fileInput);
+  var pendingSkill = null;
+
+  document.querySelectorAll(".add-evidence").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      pendingSkill = btn.getAttribute("data-skill");
+      fileInput.click();
+    });
+  });
+
+  function readAsDataUrl(file) {
+    return new Promise(function (resolve, reject) {
+      var reader = new FileReader();
+      reader.onload = function () { resolve(reader.result); };
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
+  }
+
+  fileInput.addEventListener("change", async function () {
+    var file = fileInput.files[0];
+    fileInput.value = "";
+    if (!file || !pendingSkill) return;
+    try {
+      var url, contentType;
+      if (window.claude && window.claude.use) {
+        var assets = await window.claude.use("assets");
+        if (assets) {
+          var res = await assets.upload(file);
+          url = res.url;
+          contentType = res.contentType && res.contentType.indexOf("video") === 0 ? "video" : "image";
+        }
+      }
+      if (!url) {
+        // Static hosting: embed the file directly (kept in this browser via localStorage).
+        url = await readAsDataUrl(file);
+        contentType = file.type.indexOf("video") === 0 ? "video" : "image";
+      }
+      var caption = window.prompt("Caption for this evidence:", file.name) || file.name;
+      STATE.evidence[pendingSkill].push({
+        id: "ev-" + Date.now(),
+        url: url,
+        contentType: contentType,
+        caption: caption,
+        date: new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })
+      });
+      renderGrid(pendingSkill);
+      await persist("Evidence added");
+    } catch (e) {
+      showToast("Upload failed — try again.");
+    }
+  });
+
+  // ---- reflection edit (event delegation so dynamically-replaced buttons keep working) ----
+  function openEditor() {
+    var row = document.getElementById("editRow");
+    var textEl = document.getElementById("reflectionText");
+    if (!textEl) return;
+    var ta = document.createElement("textarea");
+    ta.className = "reflection-edit";
+    ta.id = "reflectionEdit";
+    ta.value = STATE.reflection;
+    textEl.replaceWith(ta);
+    row.innerHTML = '<button class="btn primary" id="saveBtn">Save</button><button class="btn" id="cancelBtn">Cancel</button>';
+
+    function liveCount() {
+      var words = ta.value.trim().split(/\s+/).filter(Boolean).length;
+      document.getElementById("wordCount").textContent = words + " words (target: 350)";
+    }
+    ta.addEventListener("input", liveCount);
+    liveCount();
+  }
+
+  function closeEditor(save) {
+    var ta = document.getElementById("reflectionEdit");
+    var row = document.getElementById("editRow");
+    if (!ta) return;
+    if (save) STATE.reflection = ta.value;
+    var div = document.createElement("div");
+    div.className = "reflection-text"; div.id = "reflectionText";
+    ta.replaceWith(div);
+    row.innerHTML = '<button class="btn" id="editBtn">Edit reflection</button>';
+    renderReflection();
+  }
+
+  document.getElementById("editRow").addEventListener("click", async function (ev) {
+    var id = ev.target && ev.target.id;
+    if (id === "editBtn") {
+      openEditor();
+    } else if (id === "saveBtn") {
+      closeEditor(true);
+      await persist("Reflection saved");
+    } else if (id === "cancelBtn") {
+      closeEditor(false);
+    }
+  });
+
+  loadLocal();
+  renderAll();
+})();
+</script>
+</body>
+</html>
