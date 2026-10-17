@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #FAFAF9;
+    --bg: #FFFFFF;
     --surface: #F2F4F4;
     --surface-2: #EAEDED;
     --ink: #1C2B33;
@@ -24,32 +24,7 @@
     --biz-soft: #E2E8F0;
     color-scheme: light;
   }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #15191B;
-      --surface: #1D2325;
-      --surface-2: #242B2D;
-      --ink: #EDEFEF;
-      --ink-soft: #AFBDC2;
-      --border: #313A3C;
-      --comm-soft: #3A2A22;
-      --team-soft: #203330;
-      --biz-soft: #232B3A;
-      color-scheme: dark;
-    }
-  }
-  :root[data-theme="dark"] {
-    --bg: #15191B;
-    --surface: #1D2325;
-    --surface-2: #242B2D;
-    --ink: #EDEFEF;
-    --ink-soft: #AFBDC2;
-    --border: #313A3C;
-    --comm-soft: #3A2A22;
-    --team-soft: #203330;
-    --biz-soft: #232B3A;
-    color-scheme: dark;
-  }
+  /* Always a white/light theme, regardless of visitor's system preference. */
 
   * { box-sizing: border-box; }
   body {
@@ -59,7 +34,7 @@
     padding: 0 20px;
     line-height: 1.55;
   }
-  .wrap { max-width: 880px; margin: 0 auto; }
+  .wrap { max-width: 880px; margin: 0 auto; text-align: center; }
   h1, h2, h3 { font-family: "Fraunces", Georgia, serif; text-wrap: balance; margin: 0; }
 
   header.hero {
@@ -78,22 +53,21 @@
   .hero-figure .blob.b1 { width: 280px; height: 280px; top: 0; right: 0; background: var(--comm-soft); opacity: 0.8; }
   .hero-figure .blob.b2 { width: 170px; height: 170px; top: 160px; right: 160px; background: var(--team-soft); opacity: 0.85; }
   .hero-figure .blob.b3 { width: 90px; height: 90px; top: 20px; right: 230px; background: var(--biz-soft); opacity: 0.9; }
-  .hero-top { position: relative; z-index: 1; display: flex; align-items: center; gap: 24px; margin-bottom: 20px; }
+  .hero-top { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 16px; margin-bottom: 20px; }
   .avatar {
-    width: 108px; height: 108px; border-radius: 50%; object-fit: cover; flex-shrink: 0;
-    border: 3px solid var(--bg); box-shadow: 0 0 0 1px var(--border), 0 8px 24px rgba(0,0,0,0.12);
+    width: 112px; height: 112px; border-radius: 50%; object-fit: cover; flex-shrink: 0;
+    border: 3px solid var(--bg); box-shadow: 0 0 0 1px var(--border), 0 8px 24px rgba(0,0,0,0.1);
   }
   .eyebrow {
     font-size: 12.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
     color: var(--ink-soft); margin-bottom: 10px;
   }
   h1 { font-size: clamp(30px, 4.6vw, 42px); font-weight: 600; }
-  .hero-sub { position: relative; z-index: 1; font-size: 17px; color: var(--ink-soft); max-width: 60ch; margin-bottom: 22px; }
-  .meta-row { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 10px 22px; font-size: 14px; color: var(--ink-soft); }
+  .hero-sub { position: relative; z-index: 1; font-size: 17px; color: var(--ink-soft); max-width: 60ch; margin: 0 auto 22px; }
+  .meta-row { position: relative; z-index: 1; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 22px; font-size: 14px; color: var(--ink-soft); }
   .meta-row b { color: var(--ink); font-weight: 600; }
   @media (max-width: 520px) {
     .hero-figure { display: none; }
-    .hero-top { flex-direction: column; align-items: flex-start; gap: 14px; }
   }
 
   section.skill { position: relative; padding: 48px 0; border-bottom: 1px solid var(--border); overflow: hidden; }
@@ -102,7 +76,7 @@
   .skill[data-skill="team"] .skill-bg { background: var(--team-soft); }
   .skill[data-skill="biz"] .skill-bg { background: var(--biz-soft); }
   .skill > * { position: relative; z-index: 1; }
-  .skill-head { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+  .skill-head { display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 18px; }
   .skill-tag {
     font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
     padding: 7px 14px; border-radius: 100px;
@@ -112,15 +86,16 @@
   .skill[data-skill="biz"] .skill-tag { background: var(--biz-soft); color: var(--biz); }
   .skill h2 { font-size: clamp(24px, 3.4vw, 30px); font-weight: 500; }
 
-  .skill-why { font-size: 16px; color: var(--ink-soft); max-width: 68ch; margin-bottom: 26px; }
+  .skill-why { font-size: 16px; color: var(--ink-soft); max-width: 68ch; margin: 0 auto 26px; }
 
   .evidence-grid {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 260px));
+    justify-content: center;
     gap: 16px; margin-bottom: 18px;
   }
   .ev-card {
     background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
-    overflow: hidden; display: flex; flex-direction: column;
+    overflow: hidden; display: flex; flex-direction: column; text-align: left;
   }
   .ev-media { width: 100%; aspect-ratio: 4/3; background: var(--surface-2); display: flex; align-items: center; justify-content: center; overflow: hidden; }
   .ev-media img, .ev-media video { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -132,6 +107,7 @@
   .add-evidence {
     display: flex; align-items: center; gap: 10px; justify-content: center;
     background: transparent; border: 1.5px dashed var(--border); border-radius: 12px;
+    width: 100%; max-width: 260px; margin: 0 auto;
     aspect-ratio: 4/3; cursor: pointer; color: var(--ink-soft); font-size: 13.5px; font-weight: 500;
     font-family: "Work Sans", sans-serif;
   }
@@ -139,18 +115,22 @@
   .skill[data-skill="team"] .add-evidence:hover { border-color: var(--team); color: var(--team); }
   .skill[data-skill="biz"] .add-evidence:hover { border-color: var(--biz); color: var(--biz); }
 
-  .skill-note { font-size: 14.5px; color: var(--ink-soft); border-left: 2px solid var(--border); padding-left: 14px; }
+  .skill-note {
+    font-size: 14.5px; color: var(--ink-soft); max-width: 68ch; margin: 18px auto 0;
+    border-left: none; padding-left: 0; padding-top: 14px; border-top: 1px solid var(--border);
+  }
 
-  section.reflection { padding: 48px 0; }
+  section.reflection { padding: 48px 0; border-bottom: 1px solid var(--border); }
   .reflection h2 { font-size: 26px; font-weight: 500; margin-bottom: 6px; }
   .reflection .word-count { font-size: 13px; color: var(--ink-soft); margin-bottom: 20px; }
-  .reflection-text { font-size: 16px; white-space: pre-wrap; max-width: 72ch; }
+  .reflection-text { font-size: 16px; white-space: pre-wrap; max-width: 72ch; margin: 0 auto; }
   textarea.reflection-edit {
-    width: 100%; min-height: 260px; font-family: "Work Sans", sans-serif; font-size: 15.5px;
+    width: 100%; max-width: 72ch; margin: 0 auto; display: block;
+    min-height: 260px; font-family: "Work Sans", sans-serif; font-size: 15.5px;
     color: var(--ink); background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
-    padding: 14px; line-height: 1.55; resize: vertical;
+    padding: 14px; line-height: 1.55; resize: vertical; text-align: left;
   }
-  .edit-row { display: flex; gap: 10px; margin-top: 12px; }
+  .edit-row { display: flex; justify-content: center; gap: 10px; margin-top: 12px; }
   button.btn {
     font-family: "Work Sans", sans-serif; font-size: 13.5px; font-weight: 600;
     padding: 9px 16px; border-radius: 8px; border: 1px solid var(--border);
@@ -193,6 +173,15 @@
     </div>
   </header>
 
+  <section class="reflection">
+    <h2>Reflection on Attainment</h2>
+    <div class="word-count" id="wordCount"></div>
+    <div class="reflection-text" id="reflectionText"></div>
+    <div class="edit-row" id="editRow">
+      <button class="btn" id="editBtn">Edit reflection</button>
+    </div>
+  </section>
+
   <section class="skill" data-skill="comm">
     <div class="skill-bg" aria-hidden="true"></div>
     <div class="skill-head">
@@ -227,15 +216,6 @@
     <div class="evidence-grid" id="grid-biz"></div>
     <button class="add-evidence" data-skill="biz">+ Add evidence</button>
     <p class="skill-note">Built through retail roles at KIKO Milano and Inglot Cosmetics, industry and competitor mapping during PLP22203, and shaping the target segment and pricing logic for RANG Beauty.</p>
-  </section>
-
-  <section class="reflection">
-    <h2>Reflection on Attainment</h2>
-    <div class="word-count" id="wordCount"></div>
-    <div class="reflection-text" id="reflectionText"></div>
-    <div class="edit-row" id="editRow">
-      <button class="btn" id="editBtn">Edit reflection</button>
-    </div>
   </section>
 
   <footer>
